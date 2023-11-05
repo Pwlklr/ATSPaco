@@ -78,6 +78,7 @@ void BruteForceTSP::solveTSP() {
 
         for (int j = 0; j < n; j++) {
             curConsumedFuel += fuelConsumptionMatrix[updatedPermutations[j]][updatedPermutations[(j+1) % n]];
+            if (curConsumedFuel > minConsumedFuel) {break;}
         }
         if (curConsumedFuel < minConsumedFuel) {
             minConsumedFuel = curConsumedFuel;
