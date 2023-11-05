@@ -1,7 +1,9 @@
 # ATSPaco
 
 Asymetric traveling salesman problem with ant colony optimization
+
 DESCRIPTION
+
 The project addresses the Traveling Salesman Problem with three-dimensional city coordinates and fuel consumption considerations, extending the classic Traveling Salesman Problem (TSP). It incorporates three additional aspects: three-dimensional city coordinates (x, y, z) where x and y represent standard geographical coordinates, and z represents the altitude above sea level. It also takes into account fuel consumption by the car, depending on the elevation difference between the current and the next city on the route. The goal of the project is to find the optimal route between cities that minimizes the total fuel consumption during the journey.
 
 
