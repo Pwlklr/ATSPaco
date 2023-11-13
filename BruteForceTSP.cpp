@@ -85,7 +85,7 @@ void BruteForceTSP::solveTSP() {
             solutionTSP = updatedPermutations;
         }
 
-    } while (std::next_permutation(citiesID.begin(), citiesID.end()));
+    } while (std::next_permutation(citiesID.begin(), citiesID.end()) && citiesID[0] == 0);
 
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
 
