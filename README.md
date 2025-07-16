@@ -1,22 +1,49 @@
-# ATSPaco
+# ATSPaco – Ant Colony Optimization for Asymmetric TSP
 
-Asymetric traveling salesman problem with ant colony optimization
+Projekt rozwiązuje rozszerzoną wersję problemu komiwojażera – **Asymmetric Traveling Salesman Problem (ATSP)** z uwzględnieniem **współrzędnych trójwymiarowych** oraz **zużycia paliwa** zależnego od różnicy wysokości między miastami.
 
-DESCRIPTION
+---
 
-The project addresses the Traveling Salesman Problem with three-dimensional city coordinates and fuel consumption considerations, extending the classic Traveling Salesman Problem (TSP). It incorporates three additional aspects: three-dimensional city coordinates (x, y, z) where x and y represent standard geographical coordinates, and z represents the altitude above sea level. It also takes into account fuel consumption by the car, depending on the elevation difference between the current and the next city on the route. The goal of the project is to find the optimal route between cities that minimizes the total fuel consumption during the journey.
+## 📘 Opis
 
+Rozszerzony problem ATSP uwzględnia:
 
-The project employs various algorithms to solve the Traveling Salesman Problem, including:
+- **Współrzędne 3D**: każde miasto ma wartości `(x, y, z)`, gdzie `z` oznacza wysokość nad poziomem morza,
+- **Zużycie paliwa**: podróż "pod górę" kosztuje więcej, niż zjazd w dół,
+- **Asymetria trasy**: trasa A → B niekoniecznie zużywa tyle samo paliwa co B → A.
 
-Greedy Algorithm: An algorithm that selects cities in the order of minimal fuel consumption.
-Brute-Force Algorithm: An exhaustive search algorithm that explores all possible permutations of cities to find the optimal route.
-Ant Colony Algorithm: A metaheuristic-based algorithm for solving the TSP.
-Data Generator
-The project also includes a random input data generator that allows you to prepare a test dataset for the Traveling Salesman Problem with three-dimensional coordinates and fuel consumption. The generator enables you to specify the problem's degree, coordinate intervals, and elevation differences between cities.
+🎯 **Cel**: Znalezienie najoptymalniejszej (najmniej paliwożernej) trasy między wszystkimi miastami.
 
-Results Visualization
-The project provides results visualization, allowing you to understand the optimal Traveling Salesman route and the arrangement of cities in three-dimensional space. Visualization is performed using Python and utilizes the matplotlib and mpl_toolkits.mplot3d libraries.
+---
 
-License
-This project is available under the MIT License.
+## Algorytmy zaimplementowane
+
+- **Greedy Algorithm** – wybiera kolejne miasta na podstawie minimalnego kosztu paliwa.
+- **Brute-Force Algorithm** – sprawdza wszystkie możliwe permutacje tras (ekstremalnie kosztowny obliczeniowo).
+- **Ant Colony Optimization (ACO)** – metaheurystyka inspirowana zachowaniem mrówek, poszukujących najkrótszej ścieżki do pożywienia.
+
+---
+
+## Generator danych
+
+Projekt zawiera moduł generujący dane testowe:
+
+- Konfigurowalna liczba miast,
+- Zakres wartości współrzędnych `x`, `y`, `z`,
+- Losowanie różnic wysokości między miastami.
+
+Umożliwia szybkie tworzenie niestandardowych instancji problemu.
+
+---
+
+## 📊 Wizualizacja wyników
+
+- Trasy przedstawiane w **3D** z wykorzystaniem bibliotek:
+  - `matplotlib`
+  - `mpl_toolkits.mplot3d`
+- Kolorowe wizualizacje ułatwiają zrozumienie trasy oraz topografii.
+
+---
+
+## Dokładna dokumentacja
+ - Dokładną dokumentację wraz z wynikami znaleźć można w pliku dokumentacja_sprawozdanie_pl.odt
